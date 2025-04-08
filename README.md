@@ -6,7 +6,7 @@ This project uses Apache Spark MLlib to predict customer churn based on structur
 
 ---
 
-###  Dataset
+##  Dataset
 
 The dataset used is `customer_churn.csv`, which includes the following features:
 
@@ -20,24 +20,24 @@ The dataset used is `customer_churn.csv`, which includes the following features:
 - **Churn**: Target label indicating whether the customer has churned (`Yes` or `No`)
 ---
 
-###  Execution Instructions
+##  Execution Instructions
 
-## 1. Prerequisites
+### 1. Prerequisites
 
 - Apache Spark installed
 - Python environment with `pyspark` installed
 - customer_churn.csv` placed in the project directory
 
-## 2. Run the Project
+### 2. Run the Project
 
 ```bash
 spark-submit churn_prediction.py
 ```
 ---
 
-### Code Explanation
+## Code Explanation
 
-## 🔹 Task 1: Data Preprocessing and Feature Engineering
+### 🔹 Task 1: Data Preprocessing and Feature Engineering
 
 **Objective**:  
 Prepare the raw customer churn dataset for machine learning by handling missing values, encoding categorical variables, and assembling features into a vector.
@@ -48,7 +48,7 @@ Prepare the raw customer churn dataset for machine learning by handling missing 
 - Apply `OneHotEncoder` to these indexed columns.
 - Combine numerical and encoded categorical features using `VectorAssembler`.
 ---
-## 🔹 Task 2: Train and Evaluate a Logistic Regression Model
+### 🔹 Task 2: Train and Evaluate a Logistic Regression Model
 
 **Objective**:  
 Train a logistic regression model to classify churn and evaluate its performance using AUC.
@@ -59,7 +59,7 @@ Train a logistic regression model to classify churn and evaluate its performance
 - Train a `LogisticRegression` model on the training set.
 - Predict on the test set and compute AUC with `BinaryClassificationEvaluator`.
 ---
-## 🔹 Task 3: Feature Selection using Chi-Square Test
+### 🔹 Task 3: Feature Selection using Chi-Square Test
 
 **Objective**:  
 Identify the top 5 most relevant features using a statistical Chi-Square test.
@@ -69,7 +69,7 @@ Identify the top 5 most relevant features using a statistical Chi-Square test.
 - Use `ChiSqSelector` to select top 5 features most correlated with churn.
 - Output the reduced dataset showing `selectedFeatures` and `label`.
 ---
-## 🔹 Task 4: Hyperparameter Tuning and Model Comparison
+### 🔹 Task 4: Hyperparameter Tuning and Model Comparison
 
 **Objective**:  
 Train and compare multiple machine learning models using cross-validation and select the best-performing one based on AUC.
@@ -85,9 +85,9 @@ Train and compare multiple machine learning models using cross-validation and se
 - Compare AUC scores and identify the best model.
 ---
 
-### Code Outputs
+## Code Outputs
 
-## Task 1: Data Preprocessing and Feature Engineering
+### Task 1: Data Preprocessing and Feature Engineering
 ```
 +------------------------------------------------+----------+
 |features                                        |ChurnIndex|
@@ -101,7 +101,7 @@ Train and compare multiple machine learning models using cross-validation and se
 ```
 ---
 
-## Task 2: Train and Evaluate Logistic Regression Model
+### Task 2: Train and Evaluate Logistic Regression Model
 
 ```
 Logistic Regression AUC: 0.7074457690052764
@@ -109,7 +109,7 @@ Logistic Regression AUC: 0.7074457690052764
 
 ---
 
-##  Task 3: Feature Selection using Chi-Square Test
+###  Task 3: Feature Selection using Chi-Square Test
 
 ```
 +----------------------+----------+
@@ -126,7 +126,7 @@ Logistic Regression AUC: 0.7074457690052764
 
 ---
 
-## Task 4: Hyperparameter Tuning and Model Comparison
+### Task 4: Hyperparameter Tuning and Model Comparison
 
 ```
 LogisticRegression AUC: 0.7066640609732265
@@ -137,7 +137,7 @@ Best Model: RandomForest with AUC: 0.7809263240179792
 ```
 ---
 
-### ✅ Technologies Used
+## ✅ Technologies Used
 
 - Python 3.x
 - PySpark (MLlib)
