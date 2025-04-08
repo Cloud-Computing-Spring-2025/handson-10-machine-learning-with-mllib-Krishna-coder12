@@ -6,12 +6,19 @@ This project uses Apache Spark MLlib to predict customer churn based on structur
 
 ---
 
-##  Dataset
+###  Dataset
 
-The dataset used is `customer_churn.csv`, which includes features like:
+The dataset used is `customer_churn.csv`, which includes the following features:
 
-- `gender`, `SeniorCitizen`, `tenure`, `PhoneService`, `InternetService`, `MonthlyCharges`, `TotalCharges`, `Churn` (label), etc.
-
+- **gender**: Gender of the customer (`Male` or `Female`)  
+- **SeniorCitizen**: Indicates if the customer is a senior citizen (`1` = Yes, `0` = No)  
+- **tenure**: Number of months the customer has stayed with the company  
+- **PhoneService**: Whether the customer has phone service (`Yes` or `No`)  
+- **InternetService**: Type of internet service (`DSL`, `Fiber optic`, or `No`)  
+- **MonthlyCharges**: Monthly amount charged to the customer  
+- **TotalCharges**: Total amount charged over the customer's entire tenure (may contain missing values)  
+- **Churn**: Target label indicating whether the customer has churned (`Yes` or `No`)
+- 
 ---
 
 ##  Execution Instructions
