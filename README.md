@@ -2,13 +2,7 @@
 
 #  Customer Churn Prediction with MLlib
 
-This project uses Apache Spark MLlib to predict customer churn based on structured customer data. You will preprocess data, train classification models, perform feature selection, and tune hyperparameters using cross-validation.
-
----
-
-
-
-Build and compare machine learning models using PySpark to predict whether a customer will churn based on their service usage and subscription features.
+This project uses Apache Spark MLlib to predict customer churn based on structured customer data. You will preprocess data, train classification models, perform feature selection, and tune hyperparameters using cross-validation.Build and compare machine learning models using PySpark to predict whether a customer will churn based on their service usage and subscription features.
 
 ---
 
@@ -20,8 +14,56 @@ The dataset used is `customer_churn.csv`, which includes features like:
 
 ---
 
-##  Tasks
+### Code Explanation
+## 🔹 Task 1: Data Preprocessing and Feature Engineering
 
+**Objective**:  
+Prepare the raw customer churn dataset for machine learning by handling missing values, encoding categorical variables, and assembling features into a vector.
+
+**Steps**:
+- Fill missing values in the `TotalCharges` column with `0`.
+- Convert categorical columns (`gender`, `PhoneService`, `InternetService`) to numeric using `StringIndexer`.
+- Apply `OneHotEncoder` to these indexed columns.
+- Combine numerical and encoded categorical features using `VectorAssembler`.
+---
+## 🔹 Task 2: Train and Evaluate a Logistic Regression Model
+
+**Objective**:  
+Train a logistic regression model to classify churn and evaluate its performance using AUC.
+
+**Steps**:
+- Use `StringIndexer` to convert `Churn` (Yes/No) into binary `label` (1/0).
+- Split the dataset into 80% training and 20% test data.
+- Train a `LogisticRegression` model on the training set.
+- Predict on the test set and compute AUC with `BinaryClassificationEvaluator`.
+---
+## 🔹 Task 3: Feature Selection using Chi-Square Test
+
+**Objective**:  
+Identify the top 5 most relevant features using a statistical Chi-Square test.
+
+**Steps**:
+- Ensure `label` column is created from the `Churn` column.
+- Use `ChiSqSelector` to select top 5 features most correlated with churn.
+- Output the reduced dataset showing `selectedFeatures` and `label`.
+---
+## 🔹 Task 4: Hyperparameter Tuning and Model Comparison
+
+**Objective**:  
+Train and compare multiple machine learning models using cross-validation and select the best-performing one based on AUC.
+
+**Steps**:
+- Define four models:  
+  - `LogisticRegression`  
+  - `DecisionTreeClassifier`  
+  - `RandomForestClassifier`  
+  - `GBTClassifier` (Gradient Boosted Trees)
+- Build hyperparameter grids for each model.
+- Use 5-fold `CrossValidator` to train and evaluate models.
+- Compare AUC scores and identify the best model.
+---
+
+### Outputs
 ### Task 1: Data Preprocessing and Feature Engineering
 
 **Objective:**  
