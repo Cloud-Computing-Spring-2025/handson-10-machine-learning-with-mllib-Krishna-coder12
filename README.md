@@ -18,24 +18,25 @@ The dataset used is `customer_churn.csv`, which includes the following features:
 - **MonthlyCharges**: Monthly amount charged to the customer  
 - **TotalCharges**: Total amount charged over the customer's entire tenure (may contain missing values)  
 - **Churn**: Target label indicating whether the customer has churned (`Yes` or `No`)
-- 
 ---
 
-##  Execution Instructions
+###  Execution Instructions
 
-### 1. Prerequisites
+## 1. Prerequisites
 
 - Apache Spark installed
 - Python environment with `pyspark` installed
 - customer_churn.csv` placed in the project directory
 
-### 2. Run the Project
+## 2. Run the Project
 
 ```bash
 spark-submit churn_prediction.py
 ```
 ---
+
 ### Code Explanation
+
 ## 🔹 Task 1: Data Preprocessing and Feature Engineering
 
 **Objective**:  
@@ -85,6 +86,7 @@ Train and compare multiple machine learning models using cross-validation and se
 ---
 
 ### Code Outputs
+
 ## Task 1: Data Preprocessing and Feature Engineering
 ```
 +------------------------------------------------+----------+
